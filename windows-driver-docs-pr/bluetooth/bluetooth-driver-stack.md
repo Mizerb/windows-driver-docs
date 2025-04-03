@@ -36,9 +36,10 @@ The following image shows the modules within the Bluetooth driver stack, along w
   - **HidBth**- The component that implements the BR Human Interface Device (HID) profile. HidBth also communicates with the L2CAP and SDP interfaces in BthPort. HidBth connects to the HID stack much like USB HID module does.
   - **BthPan**- The component that implements the Personal Area Network (PAN) profile, providing TCP connections across an open Bluetooth connection. In Windows Vista and Windows XP, BthPan only supports outgoing connections. BthPan is also a client of the BthPort component and uses both the L2CAP and SDP interfaces.
   - **RfComm**- The component that implements the Bluetooth serial cable emulation protocol. RfComm also uses the L2CAP and SDP interfaces found in BthPort. The upper edge of RfComm exposes the TDI interface, allowing this component to appear to be a networking transport. This is how WshBth connects to Bluetooth to send and receive data from user-mode APIs.
-  - **Microsoft.Bluetooth.AvrcpTransport**- Bluetooth component which implements the driver level communications of the Audio/Visual Remote Control Profile. Accepting commands from the BthAvctp Service, it is able to send commands via L2CAP to remote devices.  
 
     User-mode applications can access RfComm using the Winsock interfaces described in the Windows SDK.
+    
+  - **Microsoft.Bluetooth.AvrcpTransport**- Bluetooth component which implements the driver level communications of the Audio/Visual Remote Control Profile. Accepting commands from the BthAvctp Service, it is able to send commands via L2CAP to remote devices.  
 
   - **BthModem**- The component that implements virtual COM ports and dial-up networking (DUN). BthModem directs all I/O and control operations to RfComm through a TDI interface. The upper edge of BthModem communicates with *Serial.sys* to give the appearance of being a wireless COM port.
  
